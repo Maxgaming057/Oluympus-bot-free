@@ -1,0 +1,988 @@
+{
+  "roles": [
+    "@everyone",
+    "Management",
+    "Moderator",
+    "Staff",
+    "Verified",
+    "Member",
+    "Unverified",
+    "Level 1",
+    "Level 2",
+    "Owner",
+    "Level 3",
+    "Support Team",
+    "VIP",
+    "MVP",
+    "MVP+",
+    "Level 5",
+    "Level 10",
+    "Muted",
+    "Mod",
+    "Helper",
+    "Bot",
+    "Support",
+    "Bots",
+    "Nameless Link",
+    "Admin"
+  ],
+  "emojis": [
+    {
+      "name": "check",
+      "id": "1287165997073174528"
+    },
+    {
+      "name": "denied",
+      "id": "1287165998977519627"
+    }
+  ],
+  "serverIcon": "https://cdn.discordapp.com/icons/1278708521768325221/3bcb806b86c4ead67895ea7d9884c046.webp",
+  "serverID": "1278708521768325221",
+  "serverSettings": {
+    "name": "Olympus Development",
+    "verificationLevel": 1,
+    "defaultMessageNotifications": 1,
+    "explicitContentFilter": 2,
+    "afkTimeout": 300,
+    "systemChannel": "general"
+  },
+  "categories": [],
+  "channels": [
+    {
+      "id": "1278710825208643687",
+      "name": "Server Status",
+      "type": 4,
+      "parentId": null
+    },
+    {
+      "id": "1305271563758731284",
+      "name": "verification",
+      "type": 0,
+      "parentId": null
+    },
+    {
+      "id": "1278710833207050345",
+      "name": "leave",
+      "type": 0,
+      "parentId": null
+    },
+    {
+      "id": "1279615814227722352",
+      "name": "🎫•transcripts",
+      "type": 0,
+      "parentId": null
+    },
+    {
+      "id": "1279771459928985601",
+      "name": "hello",
+      "type": 15,
+      "parentId": null
+    },
+    {
+      "id": "1282993003228561428",
+      "name": "rules",
+      "type": 0,
+      "parentId": null
+    },
+    {
+      "id": "1304606521774047282",
+      "name": "reviewss",
+      "type": 0,
+      "parentId": null
+    },
+    {
+      "id": "1278708521768325223",
+      "name": "Voice Channels",
+      "type": 4,
+      "parentId": null
+    },
+    {
+      "id": "1278710827092017233",
+      "name": "Support",
+      "type": 4,
+      "parentId": null
+    },
+    {
+      "id": "1279706863612723292",
+      "name": "Addons",
+      "type": 4,
+      "parentId": null
+    },
+    {
+      "id": "1278710836591857684",
+      "name": "announcement",
+      "type": 0,
+      "parentId": null
+    },
+    {
+      "id": "1281224241307713557",
+      "name": "Tickets",
+      "type": 4,
+      "parentId": null
+    },
+    {
+      "id": "1281225994803613696",
+      "name": "Management",
+      "type": 4,
+      "parentId": null
+    },
+    {
+      "id": "1278710829784760391",
+      "name": "logs",
+      "type": 0,
+      "parentId": null
+    },
+    {
+      "id": "1281224240175255623",
+      "name": "Temp Channel",
+      "type": 2,
+      "parentId": null
+    },
+    {
+      "id": "1281224235272114259",
+      "name": "polls",
+      "type": 0,
+      "parentId": null
+    },
+    {
+      "id": "1305520937885630474",
+      "name": "accepted",
+      "type": 0,
+      "parentId": "1305518731069493319"
+    },
+    {
+      "id": "1305520955325677589",
+      "name": "rejected",
+      "type": 0,
+      "parentId": "1305518731069493319"
+    },
+    {
+      "id": "1305518827496538143",
+      "name": "implemented",
+      "type": 0,
+      "parentId": "1305518731069493319"
+    },
+    {
+      "id": "1293987315517096100",
+      "name": "support",
+      "type": 4,
+      "parentId": null
+    },
+    {
+      "id": "1278710837720125452",
+      "name": "reports",
+      "type": 0,
+      "parentId": null
+    },
+    {
+      "id": "1281224243132104754",
+      "name": "Temp Channels",
+      "type": 4,
+      "parentId": null
+    },
+    {
+      "id": "1279614727995133963",
+      "name": "🎫•tickets",
+      "type": 0,
+      "parentId": null
+    },
+    {
+      "id": "1278708521768325222",
+      "name": "Text Channels",
+      "type": 4,
+      "parentId": null
+    },
+    {
+      "id": "1278710839268085933",
+      "name": "updates",
+      "type": 0,
+      "parentId": null
+    },
+    {
+      "id": "1279008382036082749",
+      "name": "support",
+      "type": 4,
+      "parentId": null
+    },
+    {
+      "id": "1287055342613827584",
+      "name": "polls",
+      "type": 0,
+      "parentId": "1278708521768325222"
+    },
+    {
+      "id": "1281226044732608543",
+      "name": "Responded",
+      "type": 4,
+      "parentId": null
+    },
+    {
+      "id": "1281224244193136682",
+      "name": "Applications",
+      "type": 4,
+      "parentId": null
+    },
+    {
+      "id": "1278710834855542825",
+      "name": "commands",
+      "type": 0,
+      "parentId": null
+    },
+    {
+      "id": "1278710831630127120",
+      "name": "welcome",
+      "type": 0,
+      "parentId": null
+    },
+    {
+      "id": "1281921654917693450",
+      "name": "shared-addons",
+      "type": 0,
+      "parentId": null
+    },
+    {
+      "id": "1278708521768325225",
+      "name": "General",
+      "type": 2,
+      "parentId": "1278708521768325223"
+    },
+    {
+      "id": "1281224238073774120",
+      "name": "announcements",
+      "type": 0,
+      "parentId": null
+    },
+    {
+      "id": "1281224232789086230",
+      "name": "bug-reports",
+      "type": 0,
+      "parentId": null
+    },
+    {
+      "id": "1278710828396183675",
+      "name": "invites",
+      "type": 0,
+      "parentId": null
+    },
+    {
+      "id": "1305518731069493319",
+      "name": "Suggestions",
+      "type": 4,
+      "parentId": null
+    },
+    {
+      "id": "1278708521768325224",
+      "name": "general",
+      "type": 0,
+      "parentId": "1278708521768325222"
+    },
+    {
+      "id": "1281224230255460423",
+      "name": "suggestions",
+      "type": 0,
+      "parentId": "1305518731069493319"
+    },
+    {
+      "id": "1278710840727703684",
+      "name": "transcripts",
+      "type": 0,
+      "parentId": null
+    },
+    {
+      "id": "1299027220093993012",
+      "name": "Suggestion Thread",
+      "type": 11,
+      "parentId": "1281224230255460423"
+    },
+    {
+      "id": "1299028629333737483",
+      "name": "Suggestion Thread",
+      "type": 11,
+      "parentId": "1281224230255460423"
+    }
+  ],
+  "members": [
+    "nekrosburek",
+    "Nameless Link",
+    "thedevtm",
+    "Olympus Development",
+    "Corebot"
+  ],
+  "permissions": [
+    {
+      "name": "@everyone",
+      "id": "1278708521768325221",
+      "permissions": [
+        "CreateInstantInvite",
+        "AddReactions",
+        "Stream",
+        "ViewChannel",
+        "SendMessages",
+        "EmbedLinks",
+        "AttachFiles",
+        "ReadMessageHistory",
+        "UseExternalEmojis",
+        "Connect",
+        "Speak",
+        "UseVAD",
+        "ChangeNickname",
+        "UseApplicationCommands",
+        "RequestToSpeak",
+        "CreatePublicThreads",
+        "CreatePrivateThreads",
+        "UseExternalStickers",
+        "SendMessagesInThreads",
+        "UseEmbeddedActivities",
+        "UseSoundboard",
+        "UseExternalSounds",
+        "SendVoiceMessages",
+        "SendPolls",
+        "UseExternalApps"
+      ]
+    },
+    {
+      "name": "Management",
+      "id": "1278710815062626305",
+      "permissions": [
+        "CreateInstantInvite",
+        "Administrator",
+        "AddReactions",
+        "Stream",
+        "ViewChannel",
+        "SendMessages",
+        "EmbedLinks",
+        "AttachFiles",
+        "ReadMessageHistory",
+        "MentionEveryone",
+        "UseExternalEmojis",
+        "Connect",
+        "Speak",
+        "UseVAD",
+        "ChangeNickname",
+        "UseApplicationCommands",
+        "RequestToSpeak",
+        "CreatePublicThreads",
+        "CreatePrivateThreads",
+        "UseExternalStickers",
+        "SendMessagesInThreads",
+        "UseEmbeddedActivities",
+        "UseSoundboard",
+        "CreateGuildExpressions",
+        "CreateEvents",
+        "UseExternalSounds",
+        "SendVoiceMessages",
+        "SendPolls",
+        "UseExternalApps"
+      ]
+    },
+    {
+      "name": "Moderator",
+      "id": "1278710817902301207",
+      "permissions": [
+        "CreateInstantInvite",
+        "AddReactions",
+        "Stream",
+        "ViewChannel",
+        "SendMessages",
+        "EmbedLinks",
+        "AttachFiles",
+        "ReadMessageHistory",
+        "MentionEveryone",
+        "UseExternalEmojis",
+        "Connect",
+        "Speak",
+        "UseVAD",
+        "ChangeNickname",
+        "UseApplicationCommands",
+        "RequestToSpeak",
+        "CreatePublicThreads",
+        "CreatePrivateThreads",
+        "UseExternalStickers",
+        "SendMessagesInThreads",
+        "UseEmbeddedActivities",
+        "UseSoundboard",
+        "CreateGuildExpressions",
+        "CreateEvents",
+        "UseExternalSounds",
+        "SendVoiceMessages",
+        "SendPolls",
+        "UseExternalApps"
+      ]
+    },
+    {
+      "name": "Staff",
+      "id": "1278710819005403279",
+      "permissions": [
+        "CreateInstantInvite",
+        "AddReactions",
+        "Stream",
+        "ViewChannel",
+        "SendMessages",
+        "EmbedLinks",
+        "AttachFiles",
+        "ReadMessageHistory",
+        "MentionEveryone",
+        "UseExternalEmojis",
+        "Connect",
+        "Speak",
+        "UseVAD",
+        "ChangeNickname",
+        "UseApplicationCommands",
+        "RequestToSpeak",
+        "CreatePublicThreads",
+        "CreatePrivateThreads",
+        "UseExternalStickers",
+        "SendMessagesInThreads",
+        "UseEmbeddedActivities",
+        "UseSoundboard",
+        "CreateGuildExpressions",
+        "CreateEvents",
+        "UseExternalSounds",
+        "SendVoiceMessages",
+        "SendPolls",
+        "UseExternalApps"
+      ]
+    },
+    {
+      "name": "Verified",
+      "id": "1278710819986608251",
+      "permissions": [
+        "CreateInstantInvite",
+        "AddReactions",
+        "Stream",
+        "ViewChannel",
+        "SendMessages",
+        "EmbedLinks",
+        "AttachFiles",
+        "ReadMessageHistory",
+        "MentionEveryone",
+        "UseExternalEmojis",
+        "Connect",
+        "Speak",
+        "UseVAD",
+        "ChangeNickname",
+        "UseApplicationCommands",
+        "RequestToSpeak",
+        "CreatePublicThreads",
+        "CreatePrivateThreads",
+        "UseExternalStickers",
+        "SendMessagesInThreads",
+        "UseEmbeddedActivities",
+        "UseSoundboard",
+        "CreateGuildExpressions",
+        "CreateEvents",
+        "UseExternalSounds",
+        "SendVoiceMessages",
+        "SendPolls",
+        "UseExternalApps"
+      ]
+    },
+    {
+      "name": "Member",
+      "id": "1278710821677174834",
+      "permissions": [
+        "CreateInstantInvite",
+        "AddReactions",
+        "Stream",
+        "ViewChannel",
+        "SendMessages",
+        "EmbedLinks",
+        "AttachFiles",
+        "ReadMessageHistory",
+        "MentionEveryone",
+        "UseExternalEmojis",
+        "Connect",
+        "Speak",
+        "UseVAD",
+        "ChangeNickname",
+        "UseApplicationCommands",
+        "RequestToSpeak",
+        "CreatePublicThreads",
+        "CreatePrivateThreads",
+        "UseExternalStickers",
+        "SendMessagesInThreads",
+        "UseEmbeddedActivities",
+        "UseSoundboard",
+        "CreateGuildExpressions",
+        "CreateEvents",
+        "UseExternalSounds",
+        "SendVoiceMessages",
+        "SendPolls",
+        "UseExternalApps"
+      ]
+    },
+    {
+      "name": "Unverified",
+      "id": "1278710823656624189",
+      "permissions": [
+        "CreateInstantInvite",
+        "AddReactions",
+        "Stream",
+        "ViewChannel",
+        "SendMessages",
+        "EmbedLinks",
+        "AttachFiles",
+        "ReadMessageHistory",
+        "MentionEveryone",
+        "UseExternalEmojis",
+        "Connect",
+        "Speak",
+        "UseVAD",
+        "ChangeNickname",
+        "UseApplicationCommands",
+        "RequestToSpeak",
+        "CreatePublicThreads",
+        "CreatePrivateThreads",
+        "UseExternalStickers",
+        "SendMessagesInThreads",
+        "UseEmbeddedActivities",
+        "UseSoundboard",
+        "CreateGuildExpressions",
+        "CreateEvents",
+        "UseExternalSounds",
+        "SendVoiceMessages",
+        "SendPolls",
+        "UseExternalApps"
+      ]
+    },
+    {
+      "name": "Level 1",
+      "id": "1278711077068210187",
+      "permissions": [
+        "CreateInstantInvite",
+        "AddReactions",
+        "Stream",
+        "ViewChannel",
+        "SendMessages",
+        "EmbedLinks",
+        "AttachFiles",
+        "ReadMessageHistory",
+        "MentionEveryone",
+        "UseExternalEmojis",
+        "Connect",
+        "Speak",
+        "UseVAD",
+        "ChangeNickname",
+        "UseApplicationCommands",
+        "RequestToSpeak",
+        "CreatePublicThreads",
+        "CreatePrivateThreads",
+        "UseExternalStickers",
+        "SendMessagesInThreads",
+        "UseEmbeddedActivities",
+        "UseSoundboard",
+        "CreateGuildExpressions",
+        "CreateEvents",
+        "UseExternalSounds",
+        "SendVoiceMessages",
+        "SendPolls",
+        "UseExternalApps"
+      ]
+    },
+    {
+      "name": "Level 2",
+      "id": "1278825662064627915",
+      "permissions": [
+        "CreateInstantInvite",
+        "AddReactions",
+        "Stream",
+        "ViewChannel",
+        "SendMessages",
+        "EmbedLinks",
+        "AttachFiles",
+        "ReadMessageHistory",
+        "MentionEveryone",
+        "UseExternalEmojis",
+        "Connect",
+        "Speak",
+        "UseVAD",
+        "ChangeNickname",
+        "UseApplicationCommands",
+        "RequestToSpeak",
+        "CreatePublicThreads",
+        "CreatePrivateThreads",
+        "UseExternalStickers",
+        "SendMessagesInThreads",
+        "UseEmbeddedActivities",
+        "UseSoundboard",
+        "CreateGuildExpressions",
+        "CreateEvents",
+        "UseExternalSounds",
+        "SendVoiceMessages",
+        "SendPolls",
+        "UseExternalApps"
+      ]
+    },
+    {
+      "name": "Owner",
+      "id": "1279973036384190494",
+      "permissions": []
+    },
+    {
+      "name": "Level 3",
+      "id": "1280886211921182843",
+      "permissions": [
+        "CreateInstantInvite",
+        "AddReactions",
+        "Stream",
+        "ViewChannel",
+        "SendMessages",
+        "EmbedLinks",
+        "AttachFiles",
+        "ReadMessageHistory",
+        "UseExternalEmojis",
+        "Connect",
+        "Speak",
+        "UseVAD",
+        "ChangeNickname",
+        "UseApplicationCommands",
+        "RequestToSpeak",
+        "CreatePublicThreads",
+        "CreatePrivateThreads",
+        "UseExternalStickers",
+        "SendMessagesInThreads",
+        "UseEmbeddedActivities",
+        "UseSoundboard",
+        "UseExternalSounds",
+        "SendVoiceMessages",
+        "SendPolls",
+        "UseExternalApps"
+      ]
+    },
+    {
+      "name": "Support Team",
+      "id": "1281222997469827072",
+      "permissions": []
+    },
+    {
+      "name": "VIP",
+      "id": "1281224229550817366",
+      "permissions": [
+        "CreateInstantInvite",
+        "AddReactions",
+        "Stream",
+        "ViewChannel",
+        "SendMessages",
+        "EmbedLinks",
+        "AttachFiles",
+        "ReadMessageHistory",
+        "UseExternalEmojis",
+        "Connect",
+        "Speak",
+        "UseVAD",
+        "ChangeNickname",
+        "UseApplicationCommands",
+        "RequestToSpeak",
+        "CreatePublicThreads",
+        "CreatePrivateThreads",
+        "UseExternalStickers",
+        "SendMessagesInThreads",
+        "UseEmbeddedActivities",
+        "UseSoundboard",
+        "UseExternalSounds",
+        "SendVoiceMessages",
+        "SendPolls",
+        "UseExternalApps"
+      ]
+    },
+    {
+      "name": "MVP",
+      "id": "1281224230679220306",
+      "permissions": [
+        "CreateInstantInvite",
+        "AddReactions",
+        "Stream",
+        "ViewChannel",
+        "SendMessages",
+        "EmbedLinks",
+        "AttachFiles",
+        "ReadMessageHistory",
+        "UseExternalEmojis",
+        "Connect",
+        "Speak",
+        "UseVAD",
+        "ChangeNickname",
+        "UseApplicationCommands",
+        "RequestToSpeak",
+        "CreatePublicThreads",
+        "CreatePrivateThreads",
+        "UseExternalStickers",
+        "SendMessagesInThreads",
+        "UseEmbeddedActivities",
+        "UseSoundboard",
+        "UseExternalSounds",
+        "SendVoiceMessages",
+        "SendPolls",
+        "UseExternalApps"
+      ]
+    },
+    {
+      "name": "MVP+",
+      "id": "1281224232625242195",
+      "permissions": [
+        "CreateInstantInvite",
+        "AddReactions",
+        "Stream",
+        "ViewChannel",
+        "SendMessages",
+        "EmbedLinks",
+        "AttachFiles",
+        "ReadMessageHistory",
+        "UseExternalEmojis",
+        "Connect",
+        "Speak",
+        "UseVAD",
+        "ChangeNickname",
+        "UseApplicationCommands",
+        "RequestToSpeak",
+        "CreatePublicThreads",
+        "CreatePrivateThreads",
+        "UseExternalStickers",
+        "SendMessagesInThreads",
+        "UseEmbeddedActivities",
+        "UseSoundboard",
+        "UseExternalSounds",
+        "SendVoiceMessages",
+        "SendPolls",
+        "UseExternalApps"
+      ]
+    },
+    {
+      "name": "Level 5",
+      "id": "1281224234781380743",
+      "permissions": [
+        "CreateInstantInvite",
+        "AddReactions",
+        "Stream",
+        "ViewChannel",
+        "SendMessages",
+        "EmbedLinks",
+        "AttachFiles",
+        "ReadMessageHistory",
+        "UseExternalEmojis",
+        "Connect",
+        "Speak",
+        "UseVAD",
+        "ChangeNickname",
+        "UseApplicationCommands",
+        "RequestToSpeak",
+        "CreatePublicThreads",
+        "CreatePrivateThreads",
+        "UseExternalStickers",
+        "SendMessagesInThreads",
+        "UseEmbeddedActivities",
+        "UseSoundboard",
+        "UseExternalSounds",
+        "SendVoiceMessages",
+        "SendPolls",
+        "UseExternalApps"
+      ]
+    },
+    {
+      "name": "Level 10",
+      "id": "1281224236375212114",
+      "permissions": [
+        "CreateInstantInvite",
+        "AddReactions",
+        "Stream",
+        "ViewChannel",
+        "SendMessages",
+        "EmbedLinks",
+        "AttachFiles",
+        "ReadMessageHistory",
+        "UseExternalEmojis",
+        "Connect",
+        "Speak",
+        "UseVAD",
+        "ChangeNickname",
+        "UseApplicationCommands",
+        "RequestToSpeak",
+        "CreatePublicThreads",
+        "CreatePrivateThreads",
+        "UseExternalStickers",
+        "SendMessagesInThreads",
+        "UseEmbeddedActivities",
+        "UseSoundboard",
+        "UseExternalSounds",
+        "SendVoiceMessages",
+        "SendPolls",
+        "UseExternalApps"
+      ]
+    },
+    {
+      "name": "Muted",
+      "id": "1281224237297958993",
+      "permissions": [
+        "CreateInstantInvite",
+        "AddReactions",
+        "Stream",
+        "ViewChannel",
+        "SendMessages",
+        "EmbedLinks",
+        "AttachFiles",
+        "ReadMessageHistory",
+        "UseExternalEmojis",
+        "Connect",
+        "Speak",
+        "UseVAD",
+        "ChangeNickname",
+        "UseApplicationCommands",
+        "RequestToSpeak",
+        "CreatePublicThreads",
+        "CreatePrivateThreads",
+        "UseExternalStickers",
+        "SendMessagesInThreads",
+        "UseEmbeddedActivities",
+        "UseSoundboard",
+        "UseExternalSounds",
+        "SendVoiceMessages",
+        "SendPolls",
+        "UseExternalApps"
+      ]
+    },
+    {
+      "name": "Mod",
+      "id": "1281224238791004201",
+      "permissions": [
+        "CreateInstantInvite",
+        "AddReactions",
+        "Stream",
+        "ViewChannel",
+        "SendMessages",
+        "EmbedLinks",
+        "AttachFiles",
+        "ReadMessageHistory",
+        "UseExternalEmojis",
+        "Connect",
+        "Speak",
+        "UseVAD",
+        "ChangeNickname",
+        "UseApplicationCommands",
+        "RequestToSpeak",
+        "CreatePublicThreads",
+        "CreatePrivateThreads",
+        "UseExternalStickers",
+        "SendMessagesInThreads",
+        "UseEmbeddedActivities",
+        "UseSoundboard",
+        "UseExternalSounds",
+        "SendVoiceMessages",
+        "SendPolls",
+        "UseExternalApps"
+      ]
+    },
+    {
+      "name": "Helper",
+      "id": "1281224240233713735",
+      "permissions": [
+        "CreateInstantInvite",
+        "AddReactions",
+        "Stream",
+        "ViewChannel",
+        "SendMessages",
+        "EmbedLinks",
+        "AttachFiles",
+        "ReadMessageHistory",
+        "UseExternalEmojis",
+        "Connect",
+        "Speak",
+        "UseVAD",
+        "ChangeNickname",
+        "UseApplicationCommands",
+        "RequestToSpeak",
+        "CreatePublicThreads",
+        "CreatePrivateThreads",
+        "UseExternalStickers",
+        "SendMessagesInThreads",
+        "UseEmbeddedActivities",
+        "UseSoundboard",
+        "UseExternalSounds",
+        "SendVoiceMessages",
+        "SendPolls",
+        "UseExternalApps"
+      ]
+    },
+    {
+      "name": "Bot",
+      "id": "1281224241500520471",
+      "permissions": [
+        "CreateInstantInvite",
+        "AddReactions",
+        "Stream",
+        "ViewChannel",
+        "SendMessages",
+        "EmbedLinks",
+        "AttachFiles",
+        "ReadMessageHistory",
+        "UseExternalEmojis",
+        "Connect",
+        "Speak",
+        "UseVAD",
+        "ChangeNickname",
+        "UseApplicationCommands",
+        "RequestToSpeak",
+        "CreatePublicThreads",
+        "CreatePrivateThreads",
+        "UseExternalStickers",
+        "SendMessagesInThreads",
+        "UseEmbeddedActivities",
+        "UseSoundboard",
+        "UseExternalSounds",
+        "SendVoiceMessages",
+        "SendPolls",
+        "UseExternalApps"
+      ]
+    },
+    {
+      "name": "Support",
+      "id": "1281225906526097428",
+      "permissions": []
+    },
+    {
+      "name": "Bots",
+      "id": "1281303780826284093",
+      "permissions": [
+        "Administrator"
+      ]
+    },
+    {
+      "name": "Nameless Link",
+      "id": "1282616016484175987",
+      "permissions": [
+        "ManageNicknames",
+        "ManageRoles"
+      ]
+    },
+    {
+      "name": "Admin",
+      "id": "1286807569100308500",
+      "permissions": [
+        "CreateInstantInvite",
+        "AddReactions",
+        "Stream",
+        "ViewChannel",
+        "SendMessages",
+        "EmbedLinks",
+        "AttachFiles",
+        "ReadMessageHistory",
+        "UseExternalEmojis",
+        "Connect",
+        "Speak",
+        "UseVAD",
+        "ChangeNickname",
+        "UseApplicationCommands",
+        "RequestToSpeak",
+        "CreatePublicThreads",
+        "CreatePrivateThreads",
+        "UseExternalStickers",
+        "SendMessagesInThreads",
+        "UseEmbeddedActivities",
+        "UseSoundboard",
+        "UseExternalSounds",
+        "SendVoiceMessages",
+        "SendPolls",
+        "UseExternalApps"
+      ]
+    }
+  ]
+}
