@@ -3,15 +3,14 @@ const Utility = require("../../../utils/modules/Utility");
 
 module.exports = {
     category: 'mod',
-    aliases: ['b'],
     data: new SlashCommandBuilder()
-        .setName('ban')
-        .setDescription('Ban member from the server')
-        .addUserOption(option => option.setName('user').setDescription('The user to ban').setRequired(true))
-        .addStringOption(option => option.setName('reason').setDescription('The reason for the ban').setRequired(true)),
+        .setName('kick')
+        .setDescription('Kick member from the server')
+        .addUserOption(option => option.setName('user').setDescription('The user to kick').setRequired(true))
+        .addStringOption(option => option.setName('reason').setDescription('The reason for the kick').setRequired(true)),
     async execute(moi, args, client, { type, send }) {
 
-        if (!Utility.permission(moi.member, moi.guild, Utility.clientConfig.Ban.permissions)) {
+        if (!Utility.permission(moi.member, moi.guild, Utility.clientConfig.Kick.permissions)) {
             return send(type, moi, {
                 embeds: [
                     Utility.embed({
@@ -31,7 +30,7 @@ module.exports = {
                     Utility.embed({
                         ...Utility.lang.Usage,
                         variables: {
-                            usage: `${await Utility.getPrefix(moi.guild.id)}ban [user] [reason]`
+                            usage: `${await Utility.getPrefix(moi.guild.id)}kick [user] [reason]`
                         }
                     })
                 ]
@@ -50,7 +49,7 @@ module.exports = {
             }, true);
         }
 
-        if (Utility.permission(member, moi.guild, Utility.clientConfig.Ban.protect)) {
+        if (Utility.permission(member, moi.guild, Utility.clientConfig.Kick.protect)) {
             return send(type, moi, {
                 embeds: [
                     Utility.embed({
@@ -80,7 +79,7 @@ module.exports = {
             }, true);
         }
 
-        if (Utility.clientConfig.Ban.sendToMember === true) {
+        if (Utility.clientConfig.Kick.sendToMember === true) {
             await user.send({
                 embeds: [
                     Utility.embed({
@@ -97,14 +96,14 @@ module.exports = {
                             memberIcon: user.displayAvatarURL({ size: 1024 }),
                             reason: reason
                         }
-                    }, { title: "Ban"})
+                    })
                 ]
             }).catch(() => { });
         }
 
-        client.emit('punishmentCreated', member, 'ban', null, reason, moi.member);
+        client.emit('punishmentCreated', member, 'kick', null, reason, moi.member);
 
-        member.ban({ reason: reason }).catch((e) => {
+        member.kick({ reason: reason }).catch((e) => {
             return send(type, moi, {
                 embeds: [
                     Utility.embed({
@@ -120,7 +119,7 @@ module.exports = {
         await send(type, moi, {
             embeds: [
                 Utility.embed({
-                    ...Utility.lang.Ban.Embed,
+                    ...Utility.lang.Kick.Embed,
                     variables: {
                         memberUser: `<@${user.id}>`,
                         memberUsername: user.username,

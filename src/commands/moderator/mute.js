@@ -1,17 +1,18 @@
 const { SlashCommandBuilder, PermissionFlagsBits } = require("discord.js");
 const Utility = require("../../../utils/modules/Utility");
+const ms = require("ms");
 
 module.exports = {
     category: 'mod',
-    aliases: ['b'],
     data: new SlashCommandBuilder()
-        .setName('ban')
-        .setDescription('Ban member from the server')
-        .addUserOption(option => option.setName('user').setDescription('The user to ban').setRequired(true))
-        .addStringOption(option => option.setName('reason').setDescription('The reason for the ban').setRequired(true)),
+        .setName('mute')
+        .setDescription('Mute member in the server')
+        .addUserOption(option => option.setName('user').setDescription('The user to mute').setRequired(true))
+        .addStringOption(option => option.setName('time').setDescription('Mute duration !').setRequired(true))
+        .addStringOption(option => option.setName('reason').setDescription('The reason for mute!').setRequired(true)),
     async execute(moi, args, client, { type, send }) {
 
-        if (!Utility.permission(moi.member, moi.guild, Utility.clientConfig.Ban.permissions)) {
+        if (!Utility.permission(moi.member, moi.guild, Utility.clientConfig.Mute.permissions)) {
             return send(type, moi, {
                 embeds: [
                     Utility.embed({
@@ -20,18 +21,18 @@ module.exports = {
                 ]
             }, true);
         }
-
         
         const user = await Utility.getUser(moi, type, args[0])
-        const reason = type == 'message' ? args.slice(1).join(' ') : moi.options.getString('reason')
+        const time = type == 'message' ? args[1] : moi.options.getString('time')
+        const reason = type == 'message' ? args.slice(2).join(' ') : moi.options.getString('reason')
 
-        if(!user || !reason) {
+        if(!user || !reason || !time) {
             return send(type, moi, {
                 embeds: [
                     Utility.embed({
                         ...Utility.lang.Usage,
                         variables: {
-                            usage: `${await Utility.getPrefix(moi.guild.id)}ban [user] [reason]`
+                            usage: `${await Utility.getPrefix(moi.guild.id)}mute [user] [duration] [reason]`
                         }
                     })
                 ]
@@ -39,6 +40,33 @@ module.exports = {
         }
 
         const member = await moi.guild.members.fetch(user.id).catch(() => { null });
+        const regex = /[mshd]/
+
+        if(!regex.test(time)) {
+            return send(type, moi, {
+                embeds: [
+                    Utility.embed({
+                        ...Utility.lang.InvalidDuration,
+                        variables: {
+                            usage: `${await Utility.getPrefix(moi.guild.id)}mute [user] [duration] [reason]`
+                        }
+                    })
+                ]
+            }, true);
+        }
+
+        if(ms(time) > ms('28d')) {
+            return send(type, moi, {
+                embeds: [
+                    Utility.embed({
+                        ...Utility.lang.InvalidDuration,
+                        variables: {
+                            usage: `${await Utility.getPrefix(moi.guild.id)}mute [user] [duration] [reason]`
+                        }
+                    })
+                ]
+            }, true);
+        }
 
         if (!member) {
             return send(type, moi, {
@@ -50,7 +78,7 @@ module.exports = {
             }, true);
         }
 
-        if (Utility.permission(member, moi.guild, Utility.clientConfig.Ban.protect)) {
+        if (Utility.permission(member, moi.guild, Utility.clientConfig.Mute.protect)) {
             return send(type, moi, {
                 embeds: [
                     Utility.embed({
@@ -80,11 +108,11 @@ module.exports = {
             }, true);
         }
 
-        if (Utility.clientConfig.Ban.sendToMember === true) {
+        if (Utility.clientConfig.Mute.sendToMember === true) {
             await user.send({
                 embeds: [
                     Utility.embed({
-                        ...Utility.lang.Ban.MemberEmbed,
+                        ...Utility.lang.Mute.MemberEmbed,
                         variables: {
                             memberUser: `<@${user.id}>`,
                             memberUsername: user.username,
@@ -95,16 +123,19 @@ module.exports = {
                             staffId: moi.member.user.id,
                             serverIcon: moi.guild.iconURL({ size: 1024 }),
                             memberIcon: user.displayAvatarURL({ size: 1024 }),
-                            reason: reason
+                            reason: reason,
+                            duration: time
                         }
                     }, { title: "Ban"})
                 ]
             }).catch(() => { });
         }
 
-        client.emit('punishmentCreated', member, 'ban', null, reason, moi.member);
+        client.emit('punishmentCreated', member, 'mute', time, reason, moi.member);
 
-        member.ban({ reason: reason }).catch((e) => {
+        const duration = ms(time)
+
+        member.timeout(duration, reason).catch((e) => {
             return send(type, moi, {
                 embeds: [
                     Utility.embed({
@@ -120,7 +151,7 @@ module.exports = {
         await send(type, moi, {
             embeds: [
                 Utility.embed({
-                    ...Utility.lang.Ban.Embed,
+                    ...Utility.lang.Mute.Embed,
                     variables: {
                         memberUser: `<@${user.id}>`,
                         memberUsername: user.username,
@@ -131,7 +162,8 @@ module.exports = {
                         staffId: moi.member.user.id,
                         serverIcon: moi.guild.iconURL({ size: 1024 }),
                         memberIcon: user.displayAvatarURL({ size: 1024 }),
-                        reason: reason
+                        reason: reason,
+                        duration: time
                     }
                 })
             ]
