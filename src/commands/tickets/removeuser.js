@@ -3,10 +3,10 @@ const Utility = require("../../../utils/modules/Utility");
 
 module.exports = {
     category: 'support',
-    aliases: ['add'],
+    aliases: ['remove'],
     data: new SlashCommandBuilder()
-        .setName('adduser')
-        .setDescription('Add a user to a ticket')
+        .setName('removeuser')
+        .setDescription('Remove user from a ticket')
         .addUserOption(option => option
             .setName('user')
             .setDescription('The user you want to add to the ticket')
@@ -14,7 +14,7 @@ module.exports = {
         ),
     async execute(moi, args, client, { type, send }) {
 
-        if (!Utility.permission(moi.member, moi.guild, Utility.clientConfig.Adduser.permissions)) {
+        if (!Utility.permission(moi.member, moi.guild, Utility.clientConfig.Removeuser.permissions)) {
             return send(type, moi, {
                 embeds: [
                     Utility.embed({
@@ -31,7 +31,7 @@ module.exports = {
                     Utility.embed({
                         ...Utility.lang.Usage,
                         variables: {
-                            usage: `${await Utility.getPrefix(moi.guild.id)}adduser [user]`
+                            usage: `${await Utility.getPrefix(moi.guild.id)}removeuser [user]`
                         }
                     })
                 ]
@@ -43,7 +43,7 @@ module.exports = {
             return send(type, moi, {
                 embeds: [
                     Utility.embed({
-                        ...Utility.lang.Adduser.NoTicket,
+                        ...Utility.lang.Removeuser.NoTicket,
                     })
                 ]
             }, true)
@@ -51,11 +51,11 @@ module.exports = {
 
         const added = JSON.parse(ticket.addedusers);
         
-        if (added.includes(user.id)) {
+        if (!added.includes(user.id)) {
             return send(type, moi, {
                 embeds: [
                     Utility.embed({
-                        ...Utility.lang.Adduser.Exist,
+                        ...Utility.lang.Removeuser.NotExist,
                         variables: {
                             memberUsername: user.username,
                             memberPfp: user.displayAvatarURL({ size: 1024 }),
@@ -71,20 +71,22 @@ module.exports = {
             }, true)
         }
 
-        await added.push(user.id);
+        const index = added.indexOf(user.id);
+        added.splice(index, 1);
+
         await Utility.db.update('ticket', { addedusers: JSON.stringify(added) }, { id: moi.channel.id })
 
         moi.channel.permissionOverwrites.edit(user.id, {
-            ViewChannel: true,
-            SendMessages: true,
-            EmbedLinks: true,
-            AddReactions: true
+            ViewChannel: false,
+            SendMessages: false,
+            EmbedLinks: false,
+            AddReactions: false
         });
 
         send(type, moi, {
             embeds: [
                 Utility.embed({
-                    ...Utility.lang.Adduser.Embed,
+                    ...Utility.lang.Removeuser.Embed,
                     variables: {
                         memberUsername: user.username,
                         memberPfp: user.displayAvatarURL({ size: 1024 }),
