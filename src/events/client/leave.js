@@ -1,19 +1,21 @@
+const { Events } = require("discord.js");
 const Utility = require("../../../utils/modules/Utility");
 
 module.exports = {
-    name: 'guildMemberAdd',
+    name: Events.GuildMemberRemove,
+    once: false,
     async execute(member) {
 
-        if(Utility.clientConfig.Welcome.enabled == false) return;
-        const channel = await Utility.findChannel(member.guild, Utility.clientConfig.Welcome.channel);
+        if(Utility.clientConfig.Leave.enabled == false) return;
+        const channel = await Utility.findChannel(member.guild, Utility.clientConfig.Leave.channel);
         if(!channel) return;
 
-        const { type } = Utility.clientConfig.Welcome
+        const { type } = Utility.clientConfig.Leave
         if(type === 'embed') {
             channel.send({
                 embeds: [
                     Utility.embed({
-                        ...Utility.lang.Welcome.embed,
+                        ...Utility.lang.Leave.embed,
                         variables: {
                             member: `<@${member.user.id}>`,
                             memberId: member.user.id,
@@ -30,7 +32,7 @@ module.exports = {
 
         if(type == 'text') {
             channel.send({
-                content: Utility.lang.Welcome.text
+                content: Utility.lang.Leave.text
                 .replace(/{member}/g, `<@${member.user.id}>`)
                 .replace(/{memberId}/g, member.user.id)
                 .replace(/{memberUsername}/g, member.user.username)
@@ -38,7 +40,5 @@ module.exports = {
                 .replace(/{accountCreated}/g, Utility.formatTime('dmyhms', member.user.createdAt))
             })
         }
-
-
     }
 }
