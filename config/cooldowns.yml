@@ -1,0 +1,10 @@
+# =======================================
+# Cooldown Module
+# =======================================
+ByPass: 
+  channels: ['commands']
+  users: []
+  roles: []
+
+
+ping: 5s ## commandName: duration
