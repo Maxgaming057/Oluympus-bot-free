@@ -1,14 +1,15 @@
 const { SlashCommandBuilder } = require("discord.js");
 const Utility = require("../../../utils/modules/Utility");
 
+
 module.exports = {
     category: 'music',
-    aliases: ['ps'],
+    aliases: ['s'],
     data: new SlashCommandBuilder()
-        .setName('pause')
-        .setDescription('Pause a song!'),
+        .setName('stop')
+        .setDescription('Stop a song!'),
     async execute(moi, args, client, { type, send }) {
-        if (!Utility.permission(moi.member, moi.guild, Utility.clientConfig.Pause.permissions)) {
+        if (!Utility.permission(moi.member, moi.guild, Utility.clientConfig.Stop.permissions)) {
             return send(type, moi, {
                 embeds: [
                     Utility.embed({
@@ -49,34 +50,21 @@ module.exports = {
         }
 
         const player = await client.music.players.get(moi.guild.id);
-        if (!player) {
+        if(!player) {
             return send(type, moi, {
                 embeds: [
                     Utility.embed({
-                        ...Utility.lang.Music.Errors.notready
+                       ...Utility.lang.Music.Errors.notready
                     })
                 ]
             }, true)
         }
 
-        if (!player?.isPlaying) {
-            return send(type, moi, {
-                embeds: [
-                    Utility.embed({
-                        ...Utility.lang.Music.Errors.Other,
-                        variables: {
-                            status: 'resumed'
-                        }
-                    })
-                ]
-            }, true)
-        }
-
-        await player.pause(true);
+        await player.destroy();
         await send(type, moi, {
             embeds: [
                 Utility.embed({
-                    ...Utility.lang.Music.Pause.Embed
+                   ...Utility.lang.Music.Stop.Embed
                 })
             ]
         }, true)

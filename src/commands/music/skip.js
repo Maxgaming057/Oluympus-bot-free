@@ -1,14 +1,15 @@
 const { SlashCommandBuilder } = require("discord.js");
 const Utility = require("../../../utils/modules/Utility");
 
+
 module.exports = {
     category: 'music',
-    aliases: ['ps'],
+    aliases: ['sk'],
     data: new SlashCommandBuilder()
-        .setName('pause')
-        .setDescription('Pause a song!'),
+        .setName('skip')
+        .setDescription('Skip this song!'),
     async execute(moi, args, client, { type, send }) {
-        if (!Utility.permission(moi.member, moi.guild, Utility.clientConfig.Pause.permissions)) {
+        if (!Utility.permission(moi.member, moi.guild, Utility.clientConfig.Skip.permissions)) {
             return send(type, moi, {
                 embeds: [
                     Utility.embed({
@@ -57,26 +58,14 @@ module.exports = {
                     })
                 ]
             }, true)
-        }
+        } 
 
-        if (!player?.isPlaying) {
-            return send(type, moi, {
-                embeds: [
-                    Utility.embed({
-                        ...Utility.lang.Music.Errors.Other,
-                        variables: {
-                            status: 'resumed'
-                        }
-                    })
-                ]
-            }, true)
-        }
+        player.skip();
 
-        await player.pause(true);
         await send(type, moi, {
             embeds: [
                 Utility.embed({
-                    ...Utility.lang.Music.Pause.Embed
+                    ...Utility.lang.Music.Skip.Embed
                 })
             ]
         }, true)
