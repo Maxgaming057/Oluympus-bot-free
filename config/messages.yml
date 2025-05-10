@@ -1,0 +1,1613 @@
+# =======================================
+# Permission Responses
+# =======================================
+Permission:
+  title: '`⏳` | No Perms'  
+  description: '> You don''t have permission to run this command.'
+  timestamp: true
+  color: error  
+
+ResponsError:
+  title: There is an error while executing your command!  
+  description: |-
+    ```js
+    {error}
+    ```
+  timestamp: true
+  color: error
+
+Usage:
+  title: '`❌` | Invalid Usage' 
+  description: '> `{usage}`'
+  timestamp: true
+  color: error
+
+NoStaffPunishment:
+  title: You cannot punish a staff member  
+  color: error
+
+NoMemberFound:
+  title: Cannot find member in the guild.  
+  color: error
+
+RolePosition:
+  title: It's impossible to punish someone with a higher position.  
+  color: error
+
+Error:
+  title: '{error}'  
+  color: error
+
+InvalidDuration:
+  title: '`❌` | Invalid Duration'  
+  description: 'Duration must be valid, 1s, 1m, 1h, 1d ... max timeout is 28d'
+  timestamp: true
+  color: error
+
+Cooldown:
+  title: '`⏳` | Cooldown'  
+  description: '> Please wait {time} before using this command again.'
+  color: error
+
+# =======================================
+# Cooldown Settings
+# =======================================
+
+Cooldowns:
+  daily: 1d  
+  weekly: 7d  
+
+# =======================================
+# Lock and Unlock Commands
+# =======================================
+Lock:
+  Embed:
+    author: Channel Lock  
+    authorIcon: '{serverIcon}'
+    description: '> Channel {channel} `({channelId})` has been locked'
+    color: success 
+    timestamp: true
+    
+Unlock:
+  Embed:
+    author: Channel Unlocked  
+    authorIcon: '{serverIcon}'
+    description: '> Channel {channel} `({channelId})` has been unlocked:'
+    color: success
+    timestamp: true
+
+# =======================================
+# Command Info
+# =======================================
+Command:
+  Embed:
+    author: Command 
+    authorIcon: '{serverIcon}'
+    fields: 
+      - name: "📙 | General"
+        value: "**Name:** {commandName}\n**Description:** {commandDescription}"
+        inline: true
+      - name: "🔧 | Usage"
+        value: "**Aliases:** `{commandAliases}`\n**Is Disabled:** {commandDisabled}"
+        inline: true
+      - name: "📜 | Cooldowns && Permission"
+        value: "**Permission:** {commandPermission}\n**Cooldown:** {cooldown}"
+        inline: true
+    color: default  
+    timestamp: true
+  CommandNotFound:
+    title: 'There is no command called: {commandName}'  
+    color: error
+
+# =======================================
+# Prefix Setting
+# =======================================
+Setprefix:
+  Embed:
+    author: Prefix Set  
+    title: 'I have set a new prefix: `{prefix}`'
+    color: success
+    timestamp: true
+
+# =======================================
+# Announcement Module
+# =======================================
+Announcement:
+  Embed:
+    author: Announcement  
+    authorIcon: '{serverIcon}'
+    title: '{title}'
+    description: '{description}'
+    color: default
+    timestamp: true
+  QuestionEmbed:
+    title: 'Question: #{questionNumber}' 
+    description: '{askQuestion}'
+    color: default
+    timestamp: true
+  questions:
+    - Announcement title ?
+    - Announcement description ?
+  Sent:
+    title: Announcement Sent 
+    description: '> Announcement has been sent!'
+    color: success
+    timestamp: true
+
+# =======================================
+# Verification Module
+# =======================================
+Verification:
+  Embed:
+    author: Verification Sent  
+    authorIcon: '{serverIcon}'
+    description: '> Verification has been sent to {channel}'
+    color: success
+    timestamp: true
+  VerificationPanel:
+    author: VERIFICATION 
+    authorIcon: '{serverIcon}'
+    title: Click on button to get verified!
+    color: default
+    timestamp: true
+  Response:
+    author: Verified
+    authorIcon: '{serverIcon}'
+    title: You have been verified in our server!
+    color: default
+    timestamp: true
+  ResponseContent: '{memberUser} has been verified!'  
+  Button:
+    - customId: verify 
+      label: Verify
+      emoji: ✏️
+      style: 2 
+
+  
+# =======================================
+# Bans Section
+# =======================================
+Bans:
+  Embed:
+    author: 'Bans - {serverName}'  
+    authorIcon: '{serverIcon}'
+    title: 'Banned Users `({bansTotal}) Ban(s)`' 
+    description: '{bans}'
+    timestamp: true
+    color: default
+
+  Nobans:
+    author: 'Bans - {serverName}'  
+    authorIcon: '{serverIcon}'
+    title: 'Banned Users `({bansTotal}) bans`'
+    description: There are currently **0** banned users.
+    timestamp: true
+    color: default
+
+# =======================================
+# Ping Section
+# =======================================
+Ping:
+  Embed:
+    author: '{clientName}'  
+    authorIcon: '{clientIcon}'
+    fields:
+      - name: '`⏳` | Websocket' 
+        value: |-
+          ```js
+          {ping}ms
+          ```
+        inline: false
+      - name: "`\U0001F7E2` | Response" 
+        value: |-
+          ```js
+          {latency}ms
+          ```
+        inline: false
+    thumbnail: '{clientIcon}'
+    color: default
+    timestamp: true
+
+# =======================================
+# Minecraft User Info Section
+# =======================================
+Mcuser:
+  Embed:
+    author: Mcuser  
+    authorIcon: '{serverIcon}'
+    fields:
+      - name: "`\U0001F194` | UUID"  
+        value: '> {profileId}'
+        inline: false
+      - name: "`\U0001F4DA` | Name"  
+        value: '> {profileName}'
+        inline: false
+      - name: '`⏳` | Timestamp'  
+        value: '> {timestamp}'
+        inline: false
+    thumbnail: '{skinUrl}' 
+    timestamp: true
+    color: default
+
+  Nouser:
+    title: 'There is an error while fetching data for: {user}'  
+    color: error
+
+# =======================================
+# Bot Information Section
+# =======================================
+Botinfo:
+  Embed:
+    title: "`\U0001F916` | Olympus bot"  
+    fields: 
+      - name: "`🤖` |  Name"  
+        value: "> {botName}"
+        inline: true
+      - name: "`🆚` |  Version"  
+        value: "> {botVersion}"
+        inline: true
+      - name: "`➕` |  Commands"  
+        value: "{botCommands}"
+        inline: true
+      - name: "`💻` |  Developer"  
+        value: "> [Echo Studios](https://discord.gg/xjDFBPy8kZ)"
+        inline: true`
+      - name: "`✅` |  Verified"  
+        value: "> {botVerified}"
+        inline: true
+      - name: "`\U0001F464` |  Members"  
+        value: "> {botUsers}"
+        inline: true
+    color: default
+    thumbnail: '{serverIcon}' 
+    timestamp: true
+
+# =======================================
+# Role Information Section
+# =======================================
+Roleinfo:
+  Embed:
+    author: Role Info  
+    authorIcon: '{serverIcon}'
+    fields:
+      - name: "`\U0001F4D2` | Role Name"  
+        value: '> {roleName} ({roleMention})'
+        inline: true
+      - name: "`\U0001F194` | Role ID"  
+        value: '> {roleId}'
+        inline: true
+      - name: "`\U0001F48E` | Role Color" 
+        value: '> {roleColor}'
+        inline: true
+      - name: "`\U0001F464` | Role Members"  
+        value: '> {memberCount}'
+        inline: true
+      - name: "`\U0001F517` | Role Position"  
+        value: '> {rolePosition}'
+        inline: true
+      - name: "`\U0001F511` | Role Hoisted"  
+        value: '> {roleHoisted}'
+        inline: true
+      - name: "`\U0001F511` | Role Permission" 
+        value: '```{rolePermissions}```'
+        inline: true
+    color: default
+    timestamp: true
+
+# =======================================
+# Server Information Section
+# =======================================
+Serverinfo:
+  Embed:
+    title: '`✏️` | Server Info'  
+    fields:
+      - name: "`\U0001F194` | Server ID"  
+        value: '> {serverId}'
+        inline: true
+      - name: "`\U0001F194` | Server Name"  
+        value: '> {serverName}'
+        inline: true
+      - name: "`\U0001F194` | Server Owner"  
+        value: '> {owner}'
+        inline: true
+      - name: Server Stats 
+        value: |-
+          > **Text Channels:** {channelsText}
+          > **Voice Channels:** {channelsVoice}
+          > **Category Channels:** {channelsCategories}
+
+          **Members:**
+          > **Total Members:** {totalMembers}
+          > **Humans:** {serverHumans}
+          > **Bots:** {serverBots}
+        inline: false
+      - name: Server Created  
+        value: '> {createdAt}'
+        inline: false
+    thumbnail: '{serverIcon}' 
+    color: default
+    timestamp: true
+
+# =======================================
+# Help Section
+# =======================================
+Help:
+  Embed:
+    author: Help  
+    authorIcon: '{serverIcon}'
+    description: '{commands}' 
+    color: default
+    timestamp: true
+    thumbnail: '{serverIcon}'
+
+# =======================================
+# Report Section
+# =======================================
+Report:
+  message: New report has been received! 
+  Embed:
+    author: REPORT RECEIVED! 
+    authorIcon: '{serverIcon}'
+    description: |-
+      **This is a report for:** {memberUser} `({memberId})`
+
+      > {reason}
+
+      **Reported from:** {reportAuthor} `({reportAuthorId})`
+      **Date:** {date}
+    thumbnail: '{reportedUserAvatar}'  
+    color: default
+    timestamp: true
+    footer: Reports  
+    footerIcon: '{authorIcon}'
+
+  Nochannel:
+    title: 'Could not find reports channel: {channel}' 
+    color: error
+
+  Sent:
+    title: Report has been successfully sent!  
+    color: default
+
+
+Userinfo:
+  Embed:
+    title: '`✏️` | User Info'  
+    fields:
+      - name: "`\U0001F194` | General"  
+        value: |-
+          > **Id:** {memberId}
+          > **Username:** {memberUsername}
+          > **Status:** {memberStatus}
+        inline: false
+      - name: '`⏳` | Create/Join Time'  
+        value: |-
+          > **Account Created:** {memberCreated}
+          > **Member Joined:** {memberJoined}
+        inline: false
+      - name: "`\U0001F365` | Roles `({rolesSize})`"  
+        value: '> {memberRoles}'
+        inline: false
+      - name: "`\U0001F3E6` | Coins, Level Etc..." 
+        value: |-
+          > **Coins:** {totalCoins}
+          > **Level:** {level}
+          > **Messages:** {messages}
+        inline: false
+    thumbnail: '{memberIcon}'  
+    footer: User Info 
+    footerIcon: '{serverIcon}'
+    timestamp: true
+    color: default
+
+
+# =======================================
+# Mute Command Responses
+# =======================================
+
+Mute:
+  Embed:
+    author: "`🔇` | Member Muted" 
+    authorIcon: '{serverIcon}'
+    title: '✅ {memberUsername} `({memberId})` has been successfully muted.'
+    color: success  
+    timestamp: true
+  MemberEmbed:
+    title: 'You have been muted in: {serverName}' 
+    description: |-
+     > **Reason:** {reason}
+    color: error
+    timestamp: true  
+    
+
+# =======================================
+# Unmute Command Responses
+# =======================================
+
+
+Unmute:
+  Embed:
+    author: "\U0001F34C Member Unmuted"  
+    authorIcon: '{serverIcon}'  
+    title: '✅ {memberUsername} `({memberId})` has been successfully unmuted.'  
+    color: success  
+    timestamp: true  
+  NotMuted:
+    title: "Member {memberUsername} is not muted!" 
+    color: error 
+  MemberEmbed:
+    title: 'You have been unmuted in: {serverName}' 
+    description: |-
+      > **Reason:** {reason}
+    color: error 
+    timestamp: true 
+
+# =======================================
+# Kick Command Responses
+# =======================================
+
+Kick:
+  Embed:
+    author: "\U0001F4A5 Member Kicked"  
+    authorIcon: '{serverIcon}' 
+    title: '✅ {memberUsername} `({memberId})` has been successfully kicked.'  
+    color: success  
+    timestamp: true 
+  MemberEmbed:
+    title: 'You have been kicked from: {serverName}'  
+    description: '> {reason}' 
+    color: error  
+    timestamp: true
+
+# =======================================
+# Warn Command Responses
+# =======================================
+
+Warn:
+  Embed:
+    author: "\U0001F6E0️ Member Warn"  
+    authorIcon: '{serverIcon}' 
+    description: |-
+      {memberUser} `({memberId})` has been warned. 
+      `/punishment {id}` - to check this warn. 
+    color: success  
+    timestamp: true  
+  MemberEmbed:
+    title: 'You have been warned in: {serverName}'  
+    description: '> {reason}' 
+    color: error 
+    timestamp: true
+
+# =======================================
+# Punishment Command Responses
+# =======================================
+
+Punishment:
+  Embed:
+    author: "\U0001F6E0️ Punishment | {memberUsername}" 
+    authorIcon: '{serverIcon}'
+    description: |-
+      **Id:** {id}  # Id of the punishment.
+      **User:** {memberUser} ({memberId}) 
+      **Staff:** {staffUser} ({staffId})
+      **Reason:** {reason}
+      `/removewarn {id}` - to remove this infraction.
+    color: default  
+    timestamp: true
+
+# =======================================
+# Warnings Command Responses
+# =======================================
+
+Warnings:
+  showType: '{id} - {staffUser} `({staffUsername})` - {memberUser} `({memberUsername})`'  
+  Embed:
+    author: "\U0001F6E0️ Warnings | {memberUsername}"  
+    authorIcon: '{serverIcon}'  
+    description: |-
+      Found Warnings for: {memberUser} 
+      {showType}
+    color: default  
+    timestamp: true 
+
+# =======================================
+# Remove Warn Command Responses
+# =======================================
+
+Removewarn:
+  Embed:
+    author: "\U0001F6E0️ Warnings Removed | {memberUsername}"  
+    authorIcon: '{serverIcon}'  
+    description: '> Successfully removed warn `{id}` from {memberUser} `({memberId})`' 
+    color: default  
+    timestamp: true
+
+# =======================================
+# Set Nickname Command Responses
+# =======================================
+
+Setnickname:
+  Embed:
+    author: Nickname Set 
+    authorIcon: '{serverIcon}'  
+    description: >-
+      I have set a new nickname for {memberUsername} `({memberId})` - **{nickname}**
+    color: success 
+    timestamp: true
+
+# =======================================
+# Clear Command Responses
+# =======================================
+
+Clear:
+  Embed:
+    title: "`\U0001F9F9` | Clear" 
+    description: '> I have cleared **{amount}** messages in {channel} `({channelId})`' 
+    color: default
+    timestamp: true
+
+# =======================================
+# Disable Command Responses
+# =======================================
+
+Disablecommand:
+  Embed:
+    Success:
+      author: Command Disabled  
+      authorIcon: '{serverIcon}'
+      description: '`{commandName}` has been successfully disabled.'
+      color: success 
+      timestamp: true
+    Error:
+      title: The command `disablecommand or enablecommand` can not be toggled off..
+      color: error
+    Disabled:
+      title: 'The command {commandName} has been alredy disabled!'
+      color: error
+
+# =======================================
+# Enable Command Responses
+# =======================================
+
+Enablecommand:
+  Embed:
+    Success:
+      author: Command Enabled
+      authorIcon: '{serverIcon}'
+      description: '`{commandName}` has been successfully enabled.'
+      color: success
+      timestamp: true
+    Error:
+      title: The command `disablecommand or enablecommand` can not be toggled on..
+      color: error
+    Enabled:
+      title: 'The command {commandName} has been alredy enabled!'
+      color: error
+
+# =======================================
+# Reload Command Responses
+# =======================================
+
+Reload:
+  Reloading:
+    author: Bot Reloading
+    title: 'Please wait, bot has started to reload: `{reloadMethod}`'
+    color: default
+    timestamp: true
+  ReloadCommands:
+    author: Bot Reloaded
+    title: Successfully reloaded all bot commands!
+    color: default
+    timestamp: true
+  ReloadEvents:
+    author: Bot Reloaded
+    title: Successfully reloaded all bot events!
+    color: default
+    timestamp: true
+  ReloadAddons:
+    author: Bot Reloaded
+    title: Successfully reloaded all bot addons!
+    color: default
+    timestamp: true
+  ReloadModules:
+    author: Bot Reloaded
+    title: Successfully reloaded all bot modules!
+    color: default
+    timestamp: true
+  Reload:
+    author: Bot Reloaded
+    title: Bot has been successfully reloaded!
+    color: default
+    timestamp: true
+
+# =======================================
+# Load Addon Command Responses
+# =======================================
+
+Loadaddon:
+  Embed:
+    author: Addon Loaded 
+    title: '> Successfully loaded addon: `{addon}` !' 
+    color: default 
+    timestamp: true  
+  AddonNotFound:
+    title: 'Addon with name: {addon} can not be found in `./addons` folder!'
+    color: error 
+  Isloaded:
+    title: "⚠️ Addon Already Loaded"
+    description: "The addon named `{addon}` is already loaded in the system."
+    color: default 
+    timestamp: true
+
+# =======================================
+# Unload Addon Command Responses
+# =======================================
+
+Unloadaddon:
+  Embed:
+    author: Addon Unload  
+    title: '> Successfully unloaded addon: `{addon}` !' 
+    color: default
+    timestamp: true 
+  AddonNotFound:
+    title: 'Addon with name: {addon} can not be found in `./addons` folder!' 
+    color: error 
+  Isloaded:
+    title: "⚠️ Addon Already Unloaded"
+    description: "The addon named `{addon}` is already unloaded from the system."
+    color: default
+    timestamp: true
+
+# =======================================
+# Addon List Command Responses
+# =======================================
+
+Addonlist:
+  Embed:
+    author: "\U0001F4D2 | Addons List"
+    authorIcon: '{serverIcon}'
+    title: '> Showing loaded and unloaded addons below!'
+    fields:
+      - name: ✅ | Loaded
+        value: '{loadedAddons}'
+        inline: false  
+      - name: ❌ | Unloaded
+        value: '{unloadedAddons}'
+        inline: false
+    color: default
+    timestamp: true
+  Noaddons:
+    title: There is no loaded or unloaded addons!
+    color: error
+
+# =======================================
+# Disabled Command Notification
+# =======================================
+
+Interaction:
+  title: 'The command `{command}` has been disabled.'
+  color: error
+
+# =======================================
+# Daily Reward Command Responses
+# =======================================
+
+Daily:
+  Embed:
+    author: Daily
+    authorIcon: '{serverIcon}'
+    title: 'You have collected your daily rewards {coins} coins.'
+    color: default
+    timestamp: true
+
+Deposit:
+  Nocoins:
+    title: "There is no coins to deposit!"
+    color: 'error'
+  Embed:
+    author: 'Deposit Coins'
+    authorIcon: '{server-icon}'
+    description: '> {user-mention} has deposited {coins} coins to the bank!'
+    color: default
+    timestamp: true
+
+Withdraw:
+  Nocoins:
+    title: "There is no coins to deposit!"
+    color: 'error'
+  Embed:
+    author: 'Withdraw Coins'
+    authorIcon: '{server-icon}'
+    description: '> {user-mention} has withdraw {coins} coins from the bank!'
+    color: default
+    timestamp: true
+
+# =======================================
+# Weekly Reward Command Responses
+# =======================================
+
+Weekly:
+  Embed:
+    author: Weekly
+    authorIcon: '{serverIcon}'
+    title: 'You have collected your weekly rewards {coins} coins.'
+    color: default
+    timestamp: true
+
+# =======================================
+# Balance Command Responses
+# =======================================
+
+Balance:
+  Embed:
+    author: Balance
+    authorIcon: '{authorIcon}'
+    description: '{memberUser}''s coins'
+    fields:
+      - name: "`\U0001FA99` | Pocket"
+        value: '> {pocketCoins}'
+        inline: true
+      - name: "`\U0001F3E6` | Bank"
+        value: '> {bankCoins}'
+        inline: true
+      - name: "`\U0001F4B0` | Total Coins"
+        value: '> {totalCoins}'
+        inline: true
+    color: default
+    timestamp: true
+
+# =======================================
+# Add Coins Command Responses
+# =======================================
+
+Addcoins:
+  ErrorAmount: Coins cannot be less than 1 or greater than 9999999999.
+  Embed:
+    author: Coins Added
+    authorIcon: '{authorIcon}'
+    description: '{staffUser} added {coins} coins to {memberUser}'
+    color: default
+    timestamp: true
+
+# =======================================
+# Remove Coins Command Responses
+# =======================================
+
+Removecoins:
+  Nocoins:
+    author: "`\U0001F4B0` | No coins"
+    authorIcon: '{serverIcon}'
+    title: There is no enough coins to be removed.
+    color: default
+    timestamp: true
+  Embed:
+    author: "`\U0001F4B0` | Coins Removed"
+    authorIcon: '{authorIcon}'
+    description: '{staffUser} removed {coins} coins from {memberUser}'
+    color: default
+    timestamp: true
+
+# =======================================
+# Coin Drop Command Responses
+# =======================================
+
+Coindrop:
+  Embed:
+    author: Drop
+    authorIcon: '{serverIcon}'
+    title: "`\U0001F4B0` | Claim Coins!"
+    description: Click on button to claim coins reward!
+    color: default
+  Claimed:
+    title: "`\U0001FA99` | Rewards Claimed"
+    description: '{memberUser} `({memberId})` has collected **{amount}** coins!'
+    timestamp: true
+    color: default
+  Timeout:
+    title: "`\U0001FA99` | Coins not claimed"
+    description: '> No one has claimed coins, good luck next time!'
+    timestamp: true
+    color: error
+  Button:
+    label: Claim Reward
+    style: 2
+    emoji: ✅
+
+# =======================================
+# Giveaway Command Responses
+# =======================================
+
+Giveaway:
+  end:
+    title: Giveaway Ended
+    description: |-
+      Congrats! {memberWinners} for winning: {prize}
+
+      Please open a ticket to claim your prize!
+    color: success
+    timestamp: true
+  Endpanel:
+    title: Giveaway Ended
+    description: |-
+      Thanks for participating in this giveaway!
+
+      **INFO:**
+      > **Prize:** {prize}
+      > **Entries:** {totalEnteries}
+      > **Host:** {host}
+    color: success
+    timestamp: true
+  Nogw:
+    title: Could not find selected giveaway in the database.
+    color: error
+  Noreq:
+    title: 'You are missing: {requirement}'
+    color: error
+  Enter:
+    title: You have entered the giveaway!
+    color: default
+  AlreadyEntered:
+    title: You have already entered this giveaway.
+    color: error
+  Noenoughmembers:
+    title: Could not choose winners cause there is no enough participants.
+    color: error
+
+
+# =======================================
+# Giveaway Start Command Responses
+# =======================================
+
+Gstart:
+  Embed:
+    author: Giveaway Started
+    authorIcon: '{authorIcon}'
+    fields:
+      - name: '`🎁` | Prize'
+        value: '> {prize}'
+        inline: true
+      - name: '`⏳` | Duration'
+        value: '> {duration} ({durationDate})'
+        inline: false
+      - name: '`👑` | Winners'
+        value: '> {winners}'
+        inline: true
+      - name: '`👑` | Host'
+        value: '> {host}'
+        inline: true
+      - name: '`➕` | Requirements'
+        value: '{requirements}'
+        inline: false
+    color: default
+    timestamp: true
+  Ask:
+    title: 'Question: #{questionNumber}'
+    description: '{question}'
+    color: default
+    timestamp: true
+  Question:
+    title: Would you like to add requirements to this giveaway?
+    description: "`\U0001F4AC` - Add Message requirements\n`\U0001F399️` - Add Voice requirements\n`➕` - Add Invites requirements\n`\U0001F39A️` - Add Level requirements\n`✏️` - Add Xp requirements\n`\U0001F4B0` - Add Coins requirements"
+    color: default
+    timestamp: true
+  Await:
+    title: Awaiting Response
+    description: Awaiting response... please enter the requirement in the channel.
+    color: default
+    timestamp: true
+  Response:
+    title: 'Added requirement: {requirement} , {amount}'
+    color: success
+  Created:
+    author: Giveaway Created
+    authorIcon: '{authorIcon}'
+    description: 'Giveaway successfully started in {channel}'
+    color: default
+    timestamp: true
+  buttons:
+    messages:
+      label: Messages
+      emoji: "\U0001F5E8️"
+      style: 2
+    voice:
+      label: Voice
+      emoji: "\U0001F399️"
+      style: 2
+    invites:
+      label: Invites
+      emoji: ➕
+      style: 2
+    level:
+      label: Level
+      emoji: "\U0001F39A️"
+      style: 2
+    xp:
+      label: Xp
+      emoji: ✏️
+      style: 2
+    coins:
+      label: Coins
+      emoji: "\U0001F4B0"
+      style: 2
+    role:
+      label: Role
+      emoji: "\U0001F365"
+      style: 2
+    confirm:
+      label: Confirm
+      emoji: ✅
+      style: 2
+    Join:
+      label: Enter
+      emoji: "\U0001F389"
+      style: 2
+
+Glist:
+  Embed:
+    title: Giveaways List
+    description: |
+      > **ID:** {id}
+      > **Channel:** {channel}
+      > **Prize:** {prize}
+      > **Ended:** {ended}
+      > **Entries:** {enteries}
+    color: default
+    timestamp: true
+  NoGiveaways:
+    title: No giveaways found for this guild.
+    color: default
+    timestamp: true
+
+Gend:
+  Embed:
+    title: Giveaway End
+    description: |-
+      Giveaway has ended successfully!
+
+      - Winners: {memberWinners}
+    color: default
+    timestamp: true
+  Ended:
+    title: This giveaway is already ended.
+    color: error
+  Unknown:
+    title: Could not find giveaway in the database.
+    color: error
+
+Gdelete:
+  Embed:
+    title: Giveaway Deleted
+    description: |-
+      Giveaway has been deleted successfully!
+
+      > **Id:** {id}
+      > **Prize:** {prize}
+    color: default
+    timestamp: true
+  Unknown:
+    title: Could not find giveaway in the database.
+    color: error
+
+Greroll:
+  Embed:
+    title: Giveaway Reroll
+    description: Giveaway has been rerolled successfully!
+    color: default
+    timestamp: true
+  Ended:
+    title: This giveaway is still active!
+    color: error
+  Unknown:
+    title: Could not find giveaway in the database.
+    color: error
+
+# =======================================
+# Music Command Responses
+# =======================================
+
+Music:
+  Errors:
+    notinvoice:
+      title: '`❌` | Not Connected'
+      description: You are not connected to a voice channel!
+      color: error
+      timestamp: true
+    notsamechannel:
+      title: '`❌` | Different Voice'
+      description: You are not connected to the same voice channel!
+      color: error
+      timestamp: true
+    notready:
+      title: '`❌` | Player not playing!'
+      description: Use `/play` to play music in the voice channel!
+      color: error
+      timestamp: true 
+    Other:
+      title: 'Player is already: {status}'
+      color: default
+    emptyqueue:
+      title: The `Queue` is empty!
+      color: default
+    Node:
+      title: ❌ | Node Error
+      description: |-
+        ```js
+        An error occurred while connecting to Lavalink Node!
+        ```
+      color: error
+      timestamp: true
+
+  Play:
+    onerror:
+      title: An error has occurred while loading your track
+      color: erro
+    onempty:
+      title: Could not find any track with that name.
+      color: error
+    loading:
+      title: Loading your track... please wait!
+      color: default
+    TrackLoad:
+      title: '`✅` | Track Loaded'
+      description: '{trackName} has been added to the queue!'
+      color: default
+      timestamp: true
+    PlaylistLoad:
+      title: '`✅` | Playlist Loaded'
+      description: '{playListLength} songs added to the queue!'
+      color: default
+      timestamp: true
+    Nowplaying:
+      title: 'Now playing: `{track}`'
+      color: default
+
+  Stop:
+    Embed:
+      title: '`⏹️` | Music Stopped'
+      description: '> Music has been stopped and the bot has left your voice channel.'
+      color: default
+      timestamp: true
+
+  Pause:
+    Embed:
+      title: '`⏸️` | Music Paused'
+      description: '> Music has been successfully paused!'
+      color: default
+      timestamp: true
+
+  Resume:
+    Embed:
+      title: '`▶️` | Music Resumed'
+      description: '> Music has been successfully resumed!'
+      color: default
+      timestamp: true
+
+  Queue:
+    show: 30
+    Embed:
+      title: '`✏️` | Music Queue'
+      description: |-
+        > Total songs in queue: `{totalSongs}`
+
+        {showSongs}  # List of songs in the queue.
+      color: default
+      timestamp: true
+
+  Skip:
+    Embed:
+      title: '`⏯️` | Music Skipped'
+      description: '> Music has been successfully skipped!'
+      color: default
+      timestamp: true
+
+# =======================================
+# Evaluation Command Responses
+# =======================================
+
+Eval:
+  Embed:
+    title: Evaluated Code
+    description: "`\U0001F4BB` | **Eval:**```js\n{input}\n```\n`✏️` | **Output:**```js\n{output}\n```"
+    color: default
+    timestamp: true
+
+# =======================================
+# Leveling Command Responses
+# =======================================
+
+Level:
+  embed:
+    title: "`\U0001F389` | Level Up"
+    description: '{member} , you have leveled up to Level: **{level}**'
+    color: '#2f3031'
+    timestamp: true
+
+# =======================================
+# Leaderboards Command Responses
+# =======================================
+
+Msgtop:
+  Embed:
+    title: "`\U0001F5E8` | Messages Leaderboard"
+    description: '{msgTop}'
+    color: default
+    thumbnail: '{serverIcon}'
+    timestamp: true
+  nomsg:
+    title: No messages to display here.
+    color: error
+
+Voicetop:
+  Embed:
+    title: "`\U0001F399` | Voice Leaderboard"
+    description: '{voiceTop}'
+    color: default
+    thumbnail: '{serverIcon}'
+    timestamp: true
+  novoice:
+    title: No voicetime to display here.
+    color: error
+
+Leveltop:
+  Embed:
+    title: '`✨` | Leveling Leaderboard'
+    description: '{levelTop}'
+    color: default
+    thumbnail: '{serverIcon}'
+    timestamp: true
+  nolevel:
+    title: No level to display here.
+    color: error
+
+Cointop:
+  Embed:
+    title: "`\U0001F4B0` | Coins Leaderboard"
+    description: '{coinTop}'
+    color: default
+    thumbnail: '{serverIcon}'
+    timestamp: true
+  nocoins:
+    title: No coins to display here.
+    color: error
+
+# =======================================
+# Leveling Command Responses
+# =======================================
+
+Levelcmd:
+  norewards: No rewards to show!
+  Embed:
+    title: '`✨` | Level'
+    description: |-
+      Displaying leveling info for: **{memberUsername}** `{memberId}`
+
+      > **Level:** {level} level
+      > **Xp:** {xp} total xp
+      > **Needed Xp:** {neededXp} ({percentage})
+      > **Latest rewards:** {latestReward}
+    color: default
+    thumbnail: '{serverIcon}'
+    timestamp: true
+  nolevel:
+    title: No level to display here.
+    color: error
+
+# =======================================
+# Messages Command Responses
+# =======================================
+
+Messages:
+  permission:
+    - Member
+  Embed:
+    title: "`\U0001F4AC` | Messages"
+    description: >-
+      {memberUsername} ({memberId}) has sent **{amount}** of messages in
+      {server}
+    color: default
+    timestamp: true 
+
+
+# =======================================
+# Messages Command Responses
+# =======================================
+
+## Command responses for handling invites
+InvitesCmd:
+  NoInvites:
+    title: "`➕` | Invites"
+    description: "{memberUsername} has no recorded invites in {server}"
+    color: default
+    timestamp: true
+    footer: "Invites"
+    footerIcon: "{serverIcon}"
+
+  Embed:
+    title: "`\U0001F4AC` | Invites"
+    description: "{memberUsername} ({memberId}) has **{total}** invites ({real} real, {fake} fake)"
+    color: default
+    timestamp: true
+    footer: "Invites"
+    footerIcon: "{serverIcon}"
+
+## Command responses for ticket creation
+New:
+  category: Support
+  staffroles:
+    - Admin
+    - Management
+  permission:
+    - Member
+  requirereason: false
+
+  Missingrole:
+    title: Missing staff role
+    description: 'Please add the following roles to your server: {roles}'
+    color: error
+    timestamp: true
+
+  Missingcategory:
+    title: Missing ticket category
+    description: 'Please add the following category to your server: {category}'
+    color: error
+    timestamp: true
+
+  Created:
+    title: "`\U0001F3AB` | Ticket Open"
+    description: 'A new ticket has been opened in {channel}'
+    color: default
+    timestamp: true
+
+  Ticketembed:
+    title: "`\U0001F3AB` | New Ticket"
+    description: "Thanks for creating ticket {ticketMember} `({ticketMemberId})`\n\n**\U0001F4D2 | Reason:**\n> `{reason}`\n\n**Our staff {staffMembers} will be here asap!**\n\n**\U0001F552 | Ticket Created:**\n> {created}"
+    timestamp: true
+    color: default
+
+## Command responses for closing tickets
+Close:
+  Closed:
+    title: "`\U0001F3AB` | Ticket Closed"
+    description: Ticket has been closed and transcript was saved!
+    timestamp: true
+    color: default
+
+  Ticketunknown:
+    title: "`\U0001F3AB` | Ticket"
+    description: Ticket cannot be found!
+    timestamp: true
+    color: error
+
+## Command responses for renaming tickets
+Rename:
+  Renamed:
+    title: "`\U0001F3AB` | Ticket Renamed"
+    description: 'I have successfully renamed **{ticket}** to **{name}**'
+    timestamp: true
+    color: default
+
+  Ticketunknown:
+    title: "`\U0001F3AB` | Ticket"
+    description: Ticket cannot be found!
+    timestamp: true
+    color: error
+
+## Command responses for closing all tickets
+Closeall:
+  notickets:
+    author: No tickets
+    authorIcon: '{serverIcon}'
+    title: There are no tickets to close.
+    color: error
+    timestamp: true
+
+  Confirmation:
+    author: Close All Tickets
+    authorIcon: '{serverIcon}'
+    title: 'Are you sure? This cannot be reversed.'
+    color: default
+    timestamp: true
+
+  Closed:
+    title: "`\U0001F3AB` | All Tickets Closed"
+    description: All tickets have been closed!
+    color: default
+    timestamp: true
+
+  Button:
+    label: Close All
+    emoji: "\U0001F5D1️"
+    style: 2
+
+## Command responses for adding a user to a ticket
+Adduser:
+  Embed:
+    title: "`\U0001F451` | Add Member"
+    description: '{memberUser} `({memberId})` has been added to the ticket.'
+    color: default
+    timestamp: true
+
+  Exist:
+    title: "`\U0001F451` | Member Exists"
+    description: '{memberUser} is already in the ticket.'
+    color: error
+    timestamp: true
+
+  NoTicket:
+    title: "`\U0001F3AB` Ticket not found!"
+    description: '> Command `adduser` can only be run in a ticket channel.'
+    color: error
+    timestamp: true
+
+## Command responses for removing a user from a ticket
+Removeuser:
+  Embed:
+    title: "`\U0001F451` | Remove Member"
+    description: '{memberUser} `({memberId})` has been removed from the ticket.'
+    color: default
+    timestamp: true
+
+  NotExist:
+    title: "`\U0001F451` | Member Not Exist"
+    description: '{memberUser} is not in the ticket.'
+    color: error
+    timestamp: true
+
+  NoTicket:
+    title: "`\U0001F3AB` Ticket not found!"
+    description: '> Command `removeuser` can only be run in a ticket channel.'
+    color: error
+    timestamp: true
+
+# =======================================
+# Anti-Link Responses
+# =======================================
+Antilink:
+  Embed:
+    title: "`\U0001F517 | Anti-Link`"
+    description: '{memberUser}, you have been warned for posting links in the server.'
+    color: error
+    timestamp: true
+
+# =======================================
+# Invite Responses
+# =======================================
+Invites:
+  normal:
+    author: Member Joined
+    authorIcon: '{serverIcon}'
+    description: '{memberUser} has joined the server, invited by: {inviterUser}'
+    color: default
+    timestamp: true
+
+  rejoin:
+    author: Member Rejoined
+    authorIcon: '{serverIcon}'
+    description: '{memberUser} has rejoined the server, invited by: {inviterUser}'
+    color: default
+    timestamp: true
+
+  permission:
+    author: Member Joined
+    authorIcon: '{serverIcon}'
+    description: >-
+      {memberUser} has joined the server, but I can't figure out how you joined
+      because I don't have the "Manage Server" permission!
+    color: default
+    timestamp: true
+
+  vanity:
+    author: Member Joined
+    authorIcon: '{serverIcon}'
+    description: '{memberUser} has joined the server using a Vanity Invite.'
+    color: default
+    timestamp: true
+
+  unknown:
+    author: Member Joined
+    authorIcon: '{serverIcon}'
+    description: '{memberUser}, I cant figure out how you joined the server...'
+    color: default
+    timestamp: true
+
+# =======================================
+# Log Responses
+# =======================================
+Logs:
+  Antilink:
+    Embed:
+      author: Anti Link - Logs
+      authorIcon: '{serverIcon}'
+      title: "`\U0001F517 | Anti-Link`"
+      description: |-
+        **Member:** {member} `({memberId})`
+
+        **Status:** Posted Link(s)
+
+        **Links:** {links}
+      color: default
+      thumbnail: '{memberpfp}'
+      timestamp: true
+
+  Ticketclosed:
+    Embed:
+      title: Ticket Closed
+      description: 'Ticket has been closed and transcript was saved! {ticket}'
+      fields:
+        - name: Staff Member
+          value: '{ticketStaff} `({ticketStaffId})`'
+          inline: true
+        - name: Reason
+          value: '{reason}'
+          inline: true
+      color: default
+      timestamp: true
+
+  Ticketrename:
+    Embed:
+      title: Ticket Renamed
+      description: 'Ticket has been renamed from **{ticket}** to **{name}**'
+      fields:
+        - name: Staff Member
+          value: '{ticketStaff} `({ticketStaffId})`'
+          inline: true
+        - name: Ticket Creator
+          value: '{ticketMember} `({ticketMemberId})`'
+          inline: true
+      color: default
+      timestamp: true
+
+  MessageDelete:
+    Embed:
+      title: "`\U0001F5D1️ | Message Deleted`"
+      description: |-
+        **Member:** {member} `({memberId})`
+
+        **Deleted Message:** {messageContent}
+      color: default
+      thumbnail: '{memberpfp}'
+      timestamp: true
+
+  MessageBulkDelete:
+    Embed:
+      title: "`\U0001F5D1️ | Message Bulk Deleted`"
+      description: |-
+        Deleted {totalMessages} from the channel: {channel}
+
+        {deleted}
+      color: default
+      thumbnail: '{memberpfp}'
+      timestamp: true
+
+  MessageUpdate:
+    Embed:
+      title: '`✏️ | Message Updated`'
+      description: |-
+        **Member:** {member} `({memberId})`
+
+        **Old Message:** {messageContent}
+        **New Message:** {newMessageContent}
+      color: default
+      thumbnail: '{memberpfp}'
+      timestamp: true
+
+  RoleCreate:
+    Embed:
+      title: '`➕ | Role Created`'
+      description: |-
+        **Name:** {roleName}
+        **Id:** {roleId}
+        **Date:** {date}
+      color: default
+      thumbnail: '{serverIcon}'
+      timestamp: true
+
+  RoleDelete:
+    Embed:
+      title: '`➖ | Role Deleted`'
+      description: |-
+        **Name:** {roleName}
+        **Id:** {roleId}
+        **Date:** {date}
+      color: default
+      thumbnail: '{serverIcon}'
+      timestamp: true
+
+  RoleAdd:
+    Embed:
+      title: '`➕ | Role Added`'
+      description: |-
+        **Member:** {member} `({memberId})`
+
+        **Role:** {role}
+      color: default
+      thumbnail: '{memberpfp}'
+      timestamp: true
+
+  RoleRemove:
+    Embed:
+      title: '`➖ | Role Removed`'
+      description: |-
+        **Member:** {member} `({memberId})`
+
+        **Role:** {role}
+      color: default
+      thumbnail: '{memberpfp}'
+      timestamp: true
+
+  ChannelCreate:
+    Embed:
+      author: Channel Created!
+      authorIcon: '{serverIcon}'
+      title: New Channel Added!
+      description: |-
+        **Name:** {channelName}
+        **Id:** {channelId}
+        **Mention:** {channelMention}
+        **Category:** {channelParent}
+      color: default
+      thumbnail: '{serverIcon}'
+      timestamp: true
+
+  ChannelDelete:
+    Embed:
+      author: Channel Deleted!
+      authorIcon: '{serverIcon}'
+      title: Old Channel Removed!
+      description: |-
+        **Name:** {channelName}
+        **Id:** {channelId}
+        **Category:** {channelParent}
+      color: default
+      thumbnail: '{serverIcon}'
+      timestamp: true
+
+  Punishment:
+    Embed:
+      author: New Punishment
+      authorIcon: '{serverIcon}'
+      title: "`\U0001F517 | Punishment Created`"
+      description: |-
+        **Member:** {member} `({memberId})`
+        **Type:** {type}
+        **Reason:** {reason}
+        **Duration:** {duration}
+        **Staff:** {staff} `({staffId})`
+      color: default
+      thumbnail: '{memberpfp}'
+      timestamp: true
+
+# =======================================
+# Welcome Message
+# =======================================
+
+Welcome:
+  text: '{member} has joined our server {server}'
+  embed:
+    author: '{memberUsername} has joined!'
+    authorIcon: '{memberpfp}'
+    title: 'Thanks for joining our server {memberUsername}!'
+    description: |-
+      {member} has joined our server: {server}
+
+      **Account Created:** {accountCreated}
+      **Member Avatar:** [Link]({memberpfp})
+    color: default
+    timestamp: true
+
+# =======================================
+# Leave Message
+# =======================================
+
+Leave:
+  text: '{memberUsername} has left our server {server}'
+  embed:
+    author: '{memberUsername} has left!'
+    authorIcon: '{memberpfp}'
+    description: "> {memberUsername} has left our server {server}"
+    color: default
+    timestamp: true
+    footer: "It is nice having you around!"
+    footerIcon: "{serverpfp}"
+
+# 0709SHQT7OJ6ES3B

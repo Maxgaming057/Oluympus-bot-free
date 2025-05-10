@@ -1,0 +1,554 @@
+##############################
+#       OLYMPUS V2           #
+##############################
+
+token: "MTMzMjk5OTE2MzE3MTk2Mjk3Mw.GVYQdg.X-FyrBP8MhBwsFq50Lev6fPTQWsODpmaVtwsJk"
+prefix: "-"
+database: "sqlite" ## Do not change this!
+
+##############################
+#      OLYMPUS DATABASE      #
+##############################
+
+database_connect:
+  host: ""
+  user: ""
+  password: ""
+  database: ""
+
+##############################
+#    OLYMPUS MAIN COLORS     #
+##############################
+
+EmbedColors:
+  Default: "#0390fc"
+  Error: "#f52c2c"
+  Success: "#25de1f"
+
+##############################
+#   OLYMPUS STATUS CYCLING   #
+##############################
+
+# Variables {members} , {bots}, {tickets}, {onlineUsers}, {offlineUsers}, {dndUsers} , {idleUsers}
+# Variables {textChannels}, {voiceChannels} , {categoryChannels}
+
+status:
+  [
+    { type: "Watching", name: "👤 {members} members", status: "online" },
+    { type: "Watching", name: "🎫 {tickets} tickets", status: "online" },
+    { type: "Watching", name: "🤖 {bots} bots", status: "online" },
+  ]
+
+debug: false #Show command execute in console
+
+##############################
+#      Commands Config       #
+##############################
+
+# Features
+
+Modules: # Is Disabled? True => Disabled, False => Enabled
+  general: false
+  util: false
+  mod: false
+  economy: false
+  music: false
+  support: false
+  admin: false
+  giveaway: false
+  addon: false
+  management: false
+
+### Admin Module ###
+
+Lock:
+  permissions:
+    - Admin
+Unlock:
+  permissions:
+    - Admin
+
+Command:
+  permissions:
+    - Admin
+
+Setprefix:
+  permissions:
+    - Admin
+
+Announcement:
+  permissions:
+    - Admin
+  mentioneveryone: true
+
+Verification:
+  permissions:
+    - Admin
+
+  Giveroles:
+    - Verified
+  Takeroles:
+    - Unverified
+
+### General Module ###
+
+# =======================================
+# Top Commands
+# =======================================
+
+Msgtop:
+  permission:
+    - everyone # Permission level: Member. Command available to all members for displaying the message leaderboard.
+
+Voicetop:
+  permission:
+    - everyone # Permission level: Member. Command available to all members for displaying the voice time leaderboard.
+
+Leveltop:
+  permission:
+    - everyone # Permission level: Member. Command available to all members for displaying the level leaderboard.
+
+Levelcmd:
+  permission:
+    - everyone # Permission level: Member. Command available to all members for displaying level-related commands.
+
+InvitesCmd:
+  permission:
+    - everyone # Permission level: Member. Command available to all members for managing invite tracking.
+
+Messages:
+  permission:
+    - everyone
+
+# =======================================
+# Utils Module
+# =======================================
+
+Ping:
+  permissions:
+    - everyone # Permission level: Member. Basic command to check the bot's response time.
+
+Mcuser:
+  permissions:
+    - everyone # Permission level: Member. Command for retrieving Minecraft user information.
+
+Botinfo:
+  permissions:
+    - everyone # Permission level: Member. Command for displaying bot information and statistics.
+
+Roleinfo:
+  permissions:
+    - everyone # Permission level: Member. Command for displaying information about a specific role.
+
+Serverinfo:
+  permissions:
+    - everyone # Permission level: Member. Command for displaying server information.
+
+Help:
+  type: categories
+  permissions:
+    - everyone # Permission level: Member. Command to display categorized help information.
+
+Report:
+  channel: reports
+
+  permissions:
+    - "@everyone" # Permission level: Everyone. Command to report issues, with reports sent to the designated channel.
+
+  pingStaff: true # Option to ping staff when a report is made.
+
+  staffRoles:
+    - Admin # Roles that will be pinged when a report is submitted.
+
+Userinfo:
+  permissions:
+    - Member # Permission level: Member. Command for displaying information about a specific user.
+
+# =======================================
+# Moderation Module
+# =======================================
+
+Ban:
+  permissions:
+    - Admin
+    - Moderator # Permission level: Admin and Moderator. Command for banning a member.
+  protect:
+    - Staff # Protection for staff members from being banned.
+  sendToMember: false # Option to not send a ban notification to the banned member.
+
+Bans:
+  permissions:
+    - Admin # Permission level: Admin. Command to list all current bans.
+
+Unban:
+  permissions:
+    - Admin # Permission level: Admin. Command to unban a member.
+
+Mute:
+  permissions:
+    - Admin # Permission level: Admin. Command to mute a member.
+  protect:
+    - Staff # Protection for staff members from being muted.
+  sendToMember: true # Option to send a mute notification to the muted member.
+
+Unmute:
+  permissions:
+    - Admin # Permission level: Admin. Command to unmute a member.
+  protect:
+    - Staff # Protection for staff members from being unmuted.
+  sendToMember: true # Option to send an unmute notification to the member.
+
+Kick:
+  permissions:
+    - Admin # Permission level: Admin. Command to kick a member.
+  protect:
+    - Staff # Protection for staff members from being kicked.
+  sendToMember: false # Option to not send a kick notification to the kicked member.
+
+Warn:
+  permissions:
+    - Admin # Permission level: Admin. Command to warn a member.
+  protect:
+    - Staff # Protection for staff members from being warned.
+  sendToMember: false # Option to not send a warning notification to the warned member.
+
+Punishment:
+  permissions:
+    - Admin # Permission level: Admin. Command to manage punishments.
+
+Warnings:
+  permissions:
+    - Admin # Permission level: Admin. Command to list all warnings for a member.
+
+Removewarn:
+  permissions:
+    - Admin # Permission level: Admin. Command to remove a warning from a member.
+
+Setnickname:
+  permissions:
+    - Admin # Permission level: Admin. Command to set or change a member's nickname.
+  protect:
+    - Staff # Protection for staff members from having their nicknames changed.
+
+Clear:
+  permissions:
+    - Admin # Permission level: Admin. Command to clear messages in a channel.
+
+# =======================================
+# Management Module
+# =======================================
+
+Disablecommand:
+  permissions:
+    - Management # Permission level: Management. Command to disable a specific command.
+
+Enablecommand:
+  permissions:
+    - Management # Permission level: Management. Command to enable a previously disabled command.
+
+Reload:
+  permissions:
+    - Management # Permission level: Management. Command to reload bot modules and commands.
+
+Loadaddon:
+  permissions:
+    - Management # Permission level: Management. Command to load a new addon.
+
+Unloadaddon:
+  permissions:
+    - Management # Permission level: Management. Command to unload an existing addon.
+
+Addonlist:
+  permissions:
+    - Management # Permission level: Management. Command to list all available addons.
+
+Eval:
+  permission:
+    - Owner # Permission level: Owner. Command to evaluate and execute code dynamically.
+
+# =======================================
+# Coins Module
+# =======================================
+
+Coins:
+  daily: 100 # Amount of coins granted daily.
+  weekly: 1000 # Amount of coins granted weekly.
+  monthly: 10000 # Amount of coins granted monthly.
+
+Daily:
+  permissions:
+    - Member # Permission level: Member. Command for members to claim daily coins.
+
+Weekly:
+  permissions:
+    - Member # Permission level: Member. Command for members to claim weekly coins.
+
+Balance:
+  permissions:
+    - Member # Permission level: Member. Command to check a member's coin balance.
+
+Cointop:
+  permission:
+    - Member # Permission level: Member. Command to display the top members with the most coins.
+
+Addcoins:
+  permissions:
+    - Admin # Permission level: Admin. Command to add coins to a member's balance.
+
+Deposit:
+  permissions:
+    - everyone # Permission level: everyone. Command to deposit coins to the bank
+
+Withdraw:
+  permissions:
+    - everyone # Permission level: everyone. Command to withdraw coins from the bank
+
+Removecoins:
+  permissions:
+    - Admin # Permission level: Admin. Command to remove coins from a member's balance.
+
+# =======================================
+# Giveaway Module
+# =======================================
+
+Gstart:
+  permissions:
+    - Admin # Permission level: Admin. Command to start a new giveaway.
+  questions:
+    - What is the prize for the giveaway? # Question to specify the prize.
+    - How long should the giveaway last for? # Question to specify the giveaway duration.
+    - How many winners should the giveaway have? # Question to specify the number of winners.
+    - Who should be the host of the giveaway? # Question to specify the giveaway host.
+    - Please mention a giveaway channel! # Question to specify the channel where the giveaway will take place.
+
+Glist:
+  permissions:
+    - Admin # Permission level: Admin. Command to list all active giveaways.
+
+Gend:
+  permissions:
+    - Admin # Permission level: Admin. Command to end a giveaway early.
+
+Gdelete:
+  permissions:
+    - Admin # Permission level: Admin. Command to delete a giveaway.
+
+Greroll:
+  permissions:
+    - Admin # Permission level: Admin. Command to reroll the giveaway winners.
+
+# =======================================
+# Music Module
+# =======================================
+# {
+#   "identifier": "INZEWORLD.COM (DE)",
+#   "password": "saher.inzeworld.com",
+#   "host": "lava.inzeworld.com",
+#   "port": 3128,
+#   "secure": false
+# }
+Music:
+  Host:
+    name: 'InzeWorld.com (DE)'
+    host: lava.inzeworld.com
+    port: 3128
+    password: saher.inzeworld.com # Configuration for the music bot host.
+
+Play:
+  permissions:
+    - Member # Permission level: Member. Command to play music in a voice channel.
+    - Admin
+
+Stop:
+  permissions:
+    - Member # Permission level: Member. Command to stop the currently playing music.
+
+Pause:
+  permissions:
+    - Member # Permission level: Member. Command to pause the currently playing music.
+
+Resume:
+  permissions:
+    - everyone # Permission level: Everyone. Command to resume paused music.
+
+Skip:
+  permissions:
+    - Member # Permission level: Member. Command to skip the currently playing track.
+
+Queue:
+  permissions:
+    - everyone # Permission level: Everyone. Command to display the current music queue.
+
+# =======================================
+# Tickets Module
+# =======================================
+
+New:
+  category: Support # The category where new tickets will be created.
+  staffroles:
+    - Admin
+    - Management # Roles that have access to tickets by default.
+  permission:
+    - Member # Permission level: Member. Command to create a new support ticket.
+
+Close:
+  permission:
+    - Admin # Permission level: Admin. Command to close an active ticket.
+  requirereason: false # Option that determines if a reason is required to close the ticket.
+
+Rename:
+  permission:
+    - Admin # Permission level: Admin. Command to rename a ticket.
+
+Closeall:
+  permission:
+    - Admin # Permission level: Admin. Command to close all open tickets at once.
+
+Adduser:
+  permissions:
+    - Staff # Permission level: Staff. Command to add a user to a ticket.
+
+Removeuser:
+  permissions:
+    - Staff # Permission level: Staff. Command to remove a user from a ticket.
+
+# =======================================
+# Antilink Module
+# =======================================
+
+Antilink:
+  permission:
+    - Staff # Permission level: Staff. Command to enable or disable the antilink protection.
+  enabled: true # Indicates if the antilink module is enabled.
+  whitelisted:
+    - google.com
+    - youtube.com
+    - twitch.tv # Domains that are allowed even when antilink is enabled.
+
+# =======================================
+# Invites Log
+# =======================================
+
+Invites:
+  channel: invites # The channel where invite logs will be posted.
+
+# =======================================
+# Logs Module
+# =======================================
+
+Logs:
+  AntiLink:
+    channel: logs # The channel where antilink logs will be posted.
+    enabled: true # Indicates if antilink logging is enabled.
+
+  Ticketclosed:
+    channel: 🎫•transcripts # The channel where ticket closure logs will be posted.
+
+  Ticketrename:
+    channel: logs # The channel where ticket rename logs will be posted.
+
+  MessageDelete:
+    channel: logs # The channel where message deletion logs will be posted.
+    enabled: true # Indicates if message deletion logging is enabled.
+
+  MessageBulkDelete:
+    plural: messages # Specifies the plural form for log messages.
+    singular: message # Specifies the singular form for log messages.
+    channel: logs # The channel where bulk message deletion logs will be posted.
+    enabled: true # Indicates if bulk message deletion logging is enabled.
+
+  MessageUpdate:
+    channel: logs # The channel where message update logs will be posted.
+    enabled: true # Indicates if message update logging is enabled.
+
+  RoleCreate:
+    channel: logs # The channel where role creation logs will be posted.
+    enabled: true # Indicates if role creation logging is enabled.
+
+  RoleDelete:
+    channel: logs # The channel where role deletion logs will be posted.
+    enabled: true # Indicates if role deletion logging is enabled.
+
+  RoleAdd:
+    channel: logs # The channel where role addition logs will be posted.
+    enabled: true # Indicates if role addition logging is enabled.
+
+  RoleRemove:
+    channel: logs # The channel where role removal logs will be posted.
+    enabled: true # Indicates if role removal logging is enabled.
+
+  ChannelCreate:
+    channel: logs # The channel where channel creation logs will be posted.
+    enabled: true # Indicates if channel creation logging is enabled.
+
+  ChannelDelete:
+    channel: logs # The channel where channel deletion logs will be posted.
+    enabled: true # Indicates if channel deletion logging is enabled.
+
+  Punishment:
+    channel: logs # The channel where punishment logs will be posted.
+    enabled: true # Indicates if punishment logging is enabled.
+
+# =======================================
+# Welcome Module
+# =======================================
+
+Welcome:
+  type: embed # The format in which the welcome message will be sent (embed).
+  enabled: false # Indicates if the welcome module is enabled.
+  channel: welcome # The channel where welcome messages will be sent.
+
+JoinRoles:
+  enabled: false # Indicates if automatic role assignment on join is enabled.
+  roles:
+    - Member
+    - Unverified # Roles assigned to new members when they join the server.
+
+Status:
+  enabled: false # Indicates if the status update is enabled.
+  interval: 5m # The interval at which the status updates.
+  category: Server Status # The category under which the status channels will be created.
+  config:
+    - channel: "000000" # The channelId where the server status will be displayed.
+      value: "{humansTotal} humans" # The format of the status message, showing the total number of humans.
+
+# =======================================
+# Leave Module
+# =======================================
+
+Leave:
+  type: text # The format in which the welcome message will be sent (embed).
+  enabled: true # Indicates if the welcome module is enabled.
+  channel: leave # The channel where welcome messages will be sent.
+
+# =======================================
+# Leveling Module
+# =======================================
+
+Level:
+  enabled: true # Indicates if the leveling system is enabled.
+  channel: ThisChannel # The channel where level-up messages will be sent.
+  mentionUser: false # Indicates if the user should be mentioned upon leveling up.
+  rewards:
+    "1": Level 1
+    "2": Level 2
+    "3": Level 3 # Rewards for each level reached.
+
+  CoinsOnLevelup: 0 # Number of coins awarded upon leveling up.
+  deleteLevelUpMessage: 5s # Time after which the level-up message will be deleted.
+
+# =======================================
+# Other Module
+# =======================================
+
+Coindrop:
+  enabled: true # Indicates if the coin drop feature is enabled.
+  logaction: false # Indicates if coin drop actions should be logged.
+  maxamount: 1000 # The maximum amount of coins that can be dropped.
+  onmessages: 50 # The frequency of coin drops based on messages sent.
+
+# =======================================
+# Bot Modules
+# =======================================
+
+Version: "2.1.0"
